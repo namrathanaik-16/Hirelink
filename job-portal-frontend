@@ -1,0 +1,19 @@
+export type UserRole = 'job-seeker';
+
+export type UserProfile = {
+  id: string;
+  fullName: string;
+  email: string;
+  passwordHash: string;
+  contactNumber?: string;
+  skills: string[];
+  domains: string[];
+  interests: string[];
+  resumeUrl?: string;
+  role: UserRole;
+  createdAt: Date;
+  updatedAt: Date;
+};
+
+export type PublicUserProfile = Omit<UserProfile, 'passwordHash'>;
+
